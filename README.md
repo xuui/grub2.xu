@@ -6,7 +6,8 @@
 ## 编译
 安装 gcc 支持库 Gcc library.
 ```
-sudo apt install -y build-essential gcc make autogen automake autoconf autopoint autotools-dev m4 \
+sudo apt install -y build-essential
+sudo apt install -y gcc make autogen automake autoconf autopoint autotools-dev m4 \
 bison gettext binutils python flex pkgconf libpkgconf xorriso unifont \
 gfxboot gfxboot-dev gfxboot-themes \
 libfreetype6 libfreetype6-dev linux-libc-dev libpciaccess-dev libpciaccess0 \
