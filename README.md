@@ -7,6 +7,9 @@
 安装 gcc 支持库 Gcc library.
 ```
 sudo apt install -y build-essential
+```
+---
+```
 sudo apt install -y gcc make autogen automake autoconf autopoint autotools-dev m4 \
 bison gettext binutils python flex pkgconf libpkgconf xorriso unifont \
 gfxboot gfxboot-dev gfxboot-themes \
@@ -15,7 +18,6 @@ fonts-dejavu ttf-dejavu fuse libfuse-dev libgusb-dev libusb-dev libsdl-gfx1.2-de
 libdevmapper-dev libdevmapper-event1.02.1 libdevmapper1.02.1 \
 liblzma-dev libzfs2linux libzfslinux-dev libtool libltdl-dev libgcrypt20 libgcrypt20-dev \
 qemu
-
 ```
 
 执行 ./autogen.sh 生成编译配置
