@@ -7061,7 +7061,7 @@
 	argp_help attempts to translate empty string, which results in printing
 	meta information about translation, like in
 
-	bor@opensuse:~/build/grub> grub2-mknetdir --help
+	bor@opensuse:~/build/xuu:> grub2-mknetdir --help
 	Использование: grub2-mknetdir [ПАРАМЕТР…]
 	Project-Id-Version: grub 2.02-pre2
 	Report-Msgid-Bugs-To: bug-grub@gnu.org

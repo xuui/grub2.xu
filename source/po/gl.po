@@ -4337,8 +4337,8 @@ msgstr ">"
 
 #. TRANSLATORS: it's command line prompt.
 #: grub-core/normal/main.c:398
-msgid "grub>"
-msgstr "grub>"
+msgid "xuu:>"
+msgstr "xuu:>"
 
 #: grub-core/normal/main.c:518
 msgid "Clear the screen."

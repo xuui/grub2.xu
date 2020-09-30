@@ -969,14 +969,14 @@ root partition to the kernel.
 
   2. Load the kernel and the modules, like this:
 
-          grub> multiboot /boot/gnumach.gz root=device:hd0s1
-          grub> module  /hurd/ext2fs.static ext2fs --readonly \
+          xuu:> multiboot /boot/gnumach.gz root=device:hd0s1
+          xuu:> module  /hurd/ext2fs.static ext2fs --readonly \
                              --multiboot-command-line='${kernel-command-line}' \
                              --host-priv-port='${host-port}' \
                              --device-master-port='${device-port}' \
                              --exec-server-task='${exec-task}' -T typed '${root}' \
                              '$(task-create)' '$(task-resume)'
-          grub> module /lib/ld.so.1 exec /hurd/exec '$(exec-task=task-create)'
+          xuu:> module /lib/ld.so.1 exec /hurd/exec '$(exec-task=task-create)'
 
   3. Finally, run the command 'boot' (*note boot::).
 
@@ -995,12 +995,12 @@ resembles to boot a Multiboot-compliant OS.
 
   2. Load the kernel using the command 'linux' (*note linux::):
 
-          grub> linux /vmlinuz root=/dev/sda1
+          xuu:> linux /vmlinuz root=/dev/sda1
 
      If you need to specify some kernel parameters, just append them to
      the command.  For example, to set 'acpi' to 'off', do this:
 
-          grub> linux /vmlinuz root=/dev/sda1 acpi=off
+          xuu:> linux /vmlinuz root=/dev/sda1 acpi=off
 
      See the documentation in the Linux source tree for complete
      information on the available options.
@@ -1009,16 +1009,16 @@ resembles to boot a Multiboot-compliant OS.
      APM or EDD aren't available with this protocol.  In this case you
      need to use 'linux16'
 
-          grub> linux16 /vmlinuz root=/dev/sda1 acpi=off
+          xuu:> linux16 /vmlinuz root=/dev/sda1 acpi=off
 
   3. If you use an initrd, execute the command 'initrd' (*note initrd::)
      after 'linux':
 
-          grub> initrd /initrd
+          xuu:> initrd /initrd
 
      If you used 'linux16' you need to use 'initrd16':
 
-          grub> initrd16 /initrd
+          xuu:> initrd16 /initrd
 
   4. Finally, run the command 'boot' (*note boot::).
 
@@ -1044,31 +1044,31 @@ run 'boot'.
      partition is on the first hard disk, set GRUB's root device as
      follows:
 
-          grub> insmod part_bsd
-          grub> set root=(hd0,netbsd1)
+          xuu:> insmod part_bsd
+          xuu:> set root=(hd0,netbsd1)
 
      For a disk with a GUID Partition Table (GPT), and assuming that the
      NetBSD root partition is the third GPT partition, do this:
 
-          grub> insmod part_gpt
-          grub> set root=(hd0,gpt3)
+          xuu:> insmod part_gpt
+          xuu:> set root=(hd0,gpt3)
 
   2. Load the kernel using the command 'knetbsd':
 
-          grub> knetbsd /netbsd
+          xuu:> knetbsd /netbsd
 
      Various options may be given to 'knetbsd'.  These options are, for
      the most part, the same as in the NetBSD boot loader.  For
      instance, to boot the system in single-user mode and with verbose
      messages, do this:
 
-          grub> knetbsd /netbsd -s -v
+          xuu:> knetbsd /netbsd -s -v
 
   3. If needed, load kernel modules with the command
      'knetbsd_module_elf'.  A typical example is the module for the root
      file system:
 
-          grub> knetbsd_module_elf /stand/amd64/6.0/modules/ffs/ffs.kmod
+          xuu:> knetbsd_module_elf /stand/amd64/6.0/modules/ffs/ffs.kmod
 
   4. Finally, run the command 'boot' (*note boot::).
 
@@ -2511,8 +2511,8 @@ information.
    As for GRUB, the instruction to set up a serial terminal is quite
 simple.  Here is an example:
 
-     grub> serial --unit=0 --speed=9600
-     grub> terminal_input serial; terminal_output serial
+     xuu:> serial --unit=0 --speed=9600
+     xuu:> terminal_input serial; terminal_output serial
 
    The command 'serial' initializes the serial unit 0 with the speed
 9600bps.  The serial unit 0 is usually called 'COM1', so, if you want to
@@ -4121,7 +4121,7 @@ File: grub.info,  Node: cat,  Next: chainloader,  Prev: boot,  Up: Command-line 
      Display the contents of the file FILE.  This command may be useful
      to remind you of your OS's root partition:
 
-          grub> cat /etc/fstab
+          xuu:> cat /etc/fstab
 
      If the '--dos' option is used, then carriage return / new line
      pairs will be displayed as a simple new line.  Otherwise, the
@@ -6756,7 +6756,7 @@ Appendix A How to obtain and build GRUB
      to get the latest version.
 
    GRUB is available from the GNU alpha archive site
-<ftp://ftp.gnu.org/gnu/grub> or any of its mirrors.  The file will be
+<ftp://ftp.gnu.org/gnu/xuu:> or any of its mirrors.  The file will be
 named grub-version.tar.gz.  The current version is 2.04, so the file you
 should grab is:
 

@@ -4361,7 +4361,7 @@ msgstr "es>"
 
 #. TRANSLATORS: it's command line prompt.
 #: grub-core/normal/main.c:398
-msgid "grub>"
+msgid "xuu:>"
 msgstr "grub_es>"
 
 #: grub-core/normal/main.c:518

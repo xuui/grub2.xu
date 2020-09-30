@@ -4332,7 +4332,7 @@ msgstr ">"
 
 #. TRANSLATORS: it's command line prompt.
 #: grub-core/normal/main.c:398
-msgid "grub>"
+msgid "xuu:>"
 msgstr "ubgray>"
 
 #: grub-core/normal/main.c:518
