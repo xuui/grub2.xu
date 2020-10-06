@@ -21,14 +21,11 @@ sudo apt install -y \
 ---
 
 ```
-sudo apt install -y   autogen automake autoconf autopoint autotools-dev m4 \
-   python  pkgconf libpkgconf xorriso unifont \
-gfxboot gfxboot-dev gfxboot-themes \
-libfreetype6 libfreetype6-dev linux-libc-dev libpciaccess-dev libpciaccess0 \
-fonts-dejavu ttf-dejavu fuse libfuse-dev libgusb-dev libusb-dev libsdl-gfx1.2-dev \
- libdevmapper-event1.02.1 libdevmapper1.02.1 \
-liblzma-dev libzfs2linux libzfslinux-dev libtool libltdl-dev libgcrypt20 libgcrypt20-dev \
-qemu
+sudo apt install -y \
+ autopoint autotools-dev \
+ linux-libc-dev \
+ libgusb-dev libusb-dev \
+ libltdl-dev libgcrypt20 libgcrypt20-dev \
 ```
 
 执行 ./autogen.sh 生成编译配置
