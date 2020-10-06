@@ -1022,14 +1022,14 @@ Load the kernel and the modules, like this:
 
 @example
 @group
-xuu:> @kbd{multiboot /boot/gnumach.gz root=device:hd0s1}
-xuu:> @kbd{module  /hurd/ext2fs.static ext2fs --readonly \
+grub> @kbd{multiboot /boot/gnumach.gz root=device:hd0s1}
+grub> @kbd{module  /hurd/ext2fs.static ext2fs --readonly \
                    --multiboot-command-line='$@{kernel-command-line@}' \
                    --host-priv-port='$@{host-port@}' \
                    --device-master-port='$@{device-port@}' \
                    --exec-server-task='$@{exec-task@}' -T typed '$@{root@}' \
                    '$(task-create)' '$(task-resume)'}
-xuu:> @kbd{module /lib/ld.so.1 exec /hurd/exec '$(exec-task=task-create)'}
+grub> @kbd{module /lib/ld.so.1 exec /hurd/exec '$(exec-task=task-create)'}
 @end group
 @end example
 
@@ -1054,14 +1054,14 @@ Set GRUB's root device to the same drive as GNU/Linux's.  The command
 Load the kernel using the command @command{linux} (@pxref{linux}):
 
 @example
-xuu:> @kbd{linux /vmlinuz root=/dev/sda1}
+grub> @kbd{linux /vmlinuz root=/dev/sda1}
 @end example
 
 If you need to specify some kernel parameters, just append them to the
 command.  For example, to set @option{acpi} to @samp{off}, do this:
 
 @example
-xuu:> @kbd{linux /vmlinuz root=/dev/sda1 acpi=off}
+grub> @kbd{linux /vmlinuz root=/dev/sda1 acpi=off}
 @end example
 
 See the documentation in the Linux source tree for complete information on
@@ -1072,7 +1072,7 @@ or EDD aren't available with this protocol. In this case you need to use
 @command{linux16}
 
 @example
-xuu:> @kbd{linux16 /vmlinuz root=/dev/sda1 acpi=off}
+grub> @kbd{linux16 /vmlinuz root=/dev/sda1 acpi=off}
 @end example 
 
 @item
@@ -1080,13 +1080,13 @@ If you use an initrd, execute the command @command{initrd} (@pxref{initrd})
 after @command{linux}:
 
 @example
-xuu:> @kbd{initrd /initrd}
+grub> @kbd{initrd /initrd}
 @end example
 
 If you used @command{linux16} you need to use @command{initrd16}:
 
 @example
-xuu:> @kbd{initrd16 /initrd}
+grub> @kbd{initrd16 /initrd}
 @end example
 
 @item
@@ -1115,23 +1115,23 @@ partition (a:).  In that case, and assuming that the partition is on the
 first hard disk, set GRUB's root device as follows:
 
 @example
-xuu:> @kbd{insmod part_bsd}
-xuu:> @kbd{set root=(hd0,netbsd1)}
+grub> @kbd{insmod part_bsd}
+grub> @kbd{set root=(hd0,netbsd1)}
 @end example
 
 For a disk with a GUID Partition Table (GPT), and assuming that the
 NetBSD root partition is the third GPT partition, do this:
 
 @example
-xuu:> @kbd{insmod part_gpt}
-xuu:> @kbd{set root=(hd0,gpt3)}
+grub> @kbd{insmod part_gpt}
+grub> @kbd{set root=(hd0,gpt3)}
 @end example
 
 @item
 Load the kernel using the command @command{knetbsd}:
 
 @example
-xuu:> @kbd{knetbsd /netbsd}
+grub> @kbd{knetbsd /netbsd}
 @end example
 
 Various options may be given to @command{knetbsd}.  These options are,
@@ -1140,7 +1140,7 @@ to boot the system in single-user mode and with verbose messages, do
 this:
 
 @example
-xuu:> @kbd{knetbsd /netbsd -s -v}
+grub> @kbd{knetbsd /netbsd -s -v}
 @end example
 
 @item
@@ -1149,7 +1149,7 @@ If needed, load kernel modules with the command
 root file system:
 
 @example
-xuu:> @kbd{knetbsd_module_elf /stand/amd64/6.0/modules/ffs/ffs.kmod}
+grub> @kbd{knetbsd_module_elf /stand/amd64/6.0/modules/ffs/ffs.kmod}
 @end example
 
 @item
@@ -2568,8 +2568,8 @@ simple.  Here is an example:
 
 @example
 @group
-xuu:> @kbd{serial --unit=0 --speed=9600}
-xuu:> @kbd{terminal_input serial; terminal_output serial}
+grub> @kbd{serial --unit=0 --speed=9600}
+grub> @kbd{terminal_input serial; terminal_output serial}
 @end group
 @end example
 
@@ -4072,7 +4072,7 @@ Display the contents of the file @var{file}. This command may be useful
 to remind you of your OS's root partition:
 
 @example
-xuu:> @kbd{cat /etc/fstab}
+grub> @kbd{cat /etc/fstab}
 @end example
 
 If the @option{--dos} option is used, then carriage return / new line pairs
