@@ -6,37 +6,20 @@
 ## 编译
 安装 gcc 支持库 Gcc library.
 ```
-sudo apt install -y build-essential
-sudo apt install -y gcc make bison gettext binutils flex pkg-config libdevmapper-dev
+sudo apt install -y \
+ build-essential g++-multilib g++-9-multilib gcc-multilib gcc-9-multilib gcc-9-locales gnu-standards lib32stdc++6-9-dbg libx32stdc++6-9-dbg \
+ make gettext m4 automake autogen autoconf autoconf-archive pkg-config libtool flex bison binutils \
+ libdevmapper-dev libpciaccess-dev libpciaccess0 libusb-dev libfreetype-dev libfreetype6-dev libsdl2-dev \
+ unifont ttf-unifont unifont-bin xorriso python rsync qemu qemu-system-x86 \
 
 
-
-For optional grub-emu features, you need:
-
-* SDL (recommended)
-* libpciaccess (optional)
-* libusb (optional)
-
-To build GRUB's graphical terminal (gfxterm), you need:
-
-* FreeType 2.1.5 or later
-* GNU Unifont
-
-If you use a development snapshot or want to hack on GRUB you may
-need the following.
-
-* Python 2.6 or later
-* Autoconf 2.63 or later
-* Automake 1.11 or later
-
-Prerequisites for make-check:
-
-* qemu, specifically the binary 'qemu-system-i386'
-* xorriso 1.2.9 or later, for grub-mkrescue and grub-shell
-
-
+sudo apt install -y \
+ gfxboot gfxboot-dev libzfs2linux libzfslinux-dev liblzma-dev libefiboot1 fuse libfuse-dev \
+ fonts-dejavu ttf-dejavu
 ```
+
 ---
+
 ```
 sudo apt install -y   autogen automake autoconf autopoint autotools-dev m4 \
    python  pkgconf libpkgconf xorriso unifont \
