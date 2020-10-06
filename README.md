@@ -1,21 +1,49 @@
 # Make Grub.
 
-文档环境基于 Ubuntu 19.10  
+文档环境基于 Ubuntu 20.10  
 官方源码地址：git clone https://git.savannah.gnu.org/git/grub.git
 
 ## 编译
 安装 gcc 支持库 Gcc library.
 ```
 sudo apt install -y build-essential
+sudo apt install -y gcc make bison gettext binutils flex pkg-config libdevmapper-dev
+
+
+
+For optional grub-emu features, you need:
+
+* SDL (recommended)
+* libpciaccess (optional)
+* libusb (optional)
+
+To build GRUB's graphical terminal (gfxterm), you need:
+
+* FreeType 2.1.5 or later
+* GNU Unifont
+
+If you use a development snapshot or want to hack on GRUB you may
+need the following.
+
+* Python 2.6 or later
+* Autoconf 2.63 or later
+* Automake 1.11 or later
+
+Prerequisites for make-check:
+
+* qemu, specifically the binary 'qemu-system-i386'
+* xorriso 1.2.9 or later, for grub-mkrescue and grub-shell
+
+
 ```
 ---
 ```
-sudo apt install -y gcc make autogen automake autoconf autopoint autotools-dev m4 \
-bison gettext binutils python flex pkgconf libpkgconf xorriso unifont \
+sudo apt install -y   autogen automake autoconf autopoint autotools-dev m4 \
+   python  pkgconf libpkgconf xorriso unifont \
 gfxboot gfxboot-dev gfxboot-themes \
 libfreetype6 libfreetype6-dev linux-libc-dev libpciaccess-dev libpciaccess0 \
 fonts-dejavu ttf-dejavu fuse libfuse-dev libgusb-dev libusb-dev libsdl-gfx1.2-dev \
-libdevmapper-dev libdevmapper-event1.02.1 libdevmapper1.02.1 \
+ libdevmapper-event1.02.1 libdevmapper1.02.1 \
 liblzma-dev libzfs2linux libzfslinux-dev libtool libltdl-dev libgcrypt20 libgcrypt20-dev \
 qemu
 ```
