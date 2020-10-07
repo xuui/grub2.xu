@@ -8,7 +8,7 @@
 ```
 sudo apt install -y \
  build-essential g++-multilib g++-9-multilib gcc-multilib gcc-9-multilib gcc-9-locales gnu-standards lib32stdc++6-9-dbg libx32stdc++6-9-dbg \
- make gettext m4 automake autogen autoconf autoconf-archive pkg-config libtool flex bison binutils \
+ make gettext m4 automake autogen autoconf autoconf-archive autopoint autotools-dev pkg-config libtool flex bison binutils \
  libdevmapper-dev libpciaccess-dev libpciaccess0 libusb-dev libfreetype-dev libfreetype6-dev libsdl2-dev \
  unifont ttf-unifont unifont-bin xorriso python rsync qemu qemu-system-x86 \
 
@@ -22,7 +22,6 @@ sudo apt install -y \
 
 ```
 sudo apt install -y \
- autopoint autotools-dev \
  linux-libc-dev \
  libgusb-dev libusb-dev \
  libltdl-dev libgcrypt20 libgcrypt20-dev \
