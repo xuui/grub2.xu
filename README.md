@@ -6,7 +6,8 @@
 ## 编译
 安装编译所需要的支持库
 ```
-sudo apt install -y build-essential g++-multilib g++-9-multilib gcc-multilib gcc-9-multilib gnu-standards lib32stdc++6-9-dbg libx32stdc++6-9-dbg 
+sudo apt install -y build-essential \
+  g++-multilib g++-9-multilib gcc-multilib gcc-9-multilib gnu-standards lib32stdc++6-9-dbg libx32stdc++6-9-dbg 
 sudo apt install -y make gettext automake autogen automake autoconf autoconf-archive autopoint autotools-dev libtool m4 flex bison binutils pkg-config \
   libdevmapper-dev libpciaccess-dev libpciaccess0 libusb-dev libfreetype-dev libfreetype6-dev libsdl2-dev
 sudo apt install -y unifont ttf-unifont unifont-bin xorriso
