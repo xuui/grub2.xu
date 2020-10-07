@@ -107,20 +107,38 @@ set prefix=/boot/grub
 
 BIOS：
 ```
-./grub-mkimage --config=config_boot.cfg --directory=grub/i386-pc --format=i386-pc --output=../grub-i386-pc.img --prefix=/boot/grub biosdisk part_msdos fat ntfs search_fs_file
-copy /b ../grub/i386-pc/boot.img+grub-i386-pc.img grub_bios.mbr
+./grub-mkimage --compression=xz \
+ --format=i386-pc \
+ --config=../config/boot_compile.cfg \
+ --directory=./i386-pc \
+ --output=../grub-i386-pc.img \
+ --prefix=/boot/grub \
+ biosdisk part_msdos fat ntfs search_fs_file
+copy /b boot.img+grub-i386-pc.img grub.mbr
 ```
 
 UEFI 32bit：
 ```
-./grub-mkimage --config=config_boot.cfg --directory=grub/i386-efi --format=i386-efi --output=../grub-i386.efi --prefix=/boot/grub part_gpt part_msdos disk fat  ext2 ntfs xfs appleldr hfs iso9660 normal search_fs_file configfile linux linux16 chain loopback echo efi_gop efi_uga video_bochs video_cirrus file gfxmenu gfxterm gfxterm_background gfxterm_menu halt reboot help jpeg ls png true 
-
+./grub-mkimage --compression=xz \
+ --format=i386-efi \
+ --config=../config/efi_compile.cfg \
+ --directory=./i386-efi \
+ --output=../grubia32.efi \
+ --prefix=/efi/grub \
+ part_gpt part_msdos disk fat ntfs xfs appleldr hfs iso9660 normal search_fs_file search_fs_uuid search_label configfile linux linux16 chain loopback echo efi_gop efi_uga video_bochs video_cirrus file gfxmenu gfxterm gfxterm_background gfxterm_menu halt reboot help jpeg ls png true
+copy grubia32.efi bootia32.efi
 ```
 
 UEFI 64bit：
 ```
-./grub-mkimage --config=config_boot.cfg --directory=grub/x86_64-efi --format=x86_64-efi --output=../grub-x86_64.efi --prefix=/boot/grub part_gpt part_msdos disk fat  ext2 ntfs xfs appleldr hfs iso9660 normal search_fs_file configfile linux linux16 chain loopback echo efi_gop efi_uga video_bochs video_cirrus file gfxmenu gfxterm gfxterm_background gfxterm_menu halt reboot help jpeg ls png true
-
+./grub-mkimage --compression=xz \
+ --format=x86_64-efi \
+ --config=../config/efi_compile.cfg \
+ --directory=./x86_64-efi \
+ --output=../grubx64.efi \
+ --prefix=/efi/grub \
+ part_gpt part_msdos disk fat ntfs xfs appleldr hfs iso9660 normal search_fs_file search_fs_uuid search_label configfile linux linux16 chain loopback echo efi_gop efi_uga video_bochs video_cirrus file gfxmenu gfxterm gfxterm_background gfxterm_menu halt reboot help jpeg ls png true
+copy grubx64.efi bootx64.efi
 ```
 
 ### 扩展 core.img
