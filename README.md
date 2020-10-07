@@ -30,8 +30,7 @@ sudo apt install -y gfxboot gfxboot-dev libzfs2linux libzfslinux-dev liblzma5 li
 ```
 ./configure --target=i386 --with-platform=pc \
 --prefix=/home/xu/grub2-bin --bindir=/home/xu/grub2-bin --sbindir=/home/xu/grub2-bin --libdir=/home/xu/grub2-bin \
---sysconfdir=/home/xu/grub2-bin/etc --localstatedir=/home/xu/grub2-bin/var --datarootdir=/home/xu/grub2-bin/share \
---enable-largefile=yes --enable-liblzma=yes
+--sysconfdir=/home/xu/grub2-bin/etc --localstatedir=/home/xu/grub2-bin/var --datarootdir=/home/xu/grub2-bin/share
 make && make install && make clean
 ```
 
@@ -61,7 +60,7 @@ pv-grub-menu
 make && make install && make clean
 ```
 
-可以按需加上其他附带的配置参数。比如 --enable-largefile=yes 开启大文件， --enable-liblzma=yes 支持 xz 压缩等。
+可以按需加上其他附带的配置参数。比如 --enable-largefile=yes 开启大文件， --enable-liblzma=yes 支持 XZ 压缩等。
 
 ## 生成引导文件
 
