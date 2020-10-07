@@ -14,7 +14,14 @@ unifont ttf-unifont unifont-bin xorriso python rsync qemu qemu-system-x86
 
 
 sudo apt install -y \
-gfxboot gfxboot-dev libzfs2linux libzfslinux-dev liblzma-dev libefiboot1 fuse libfuse-dev fonts-dejavu ttf-dejavu
+gfxboot gfxboot-dev libzfs2linux libzfslinux-dev liblzma5 liblzma-dev libefiboot1 fuse libfuse-dev fonts-dejavu ttf-dejavu
+
+
+libpth20 libpth-dev libintl-perl libintl-xs-perl
+libiconv-hook-dev libiconv-hook1
+
+
+
 ```
 
 ---
@@ -34,7 +41,8 @@ libltdl-dev libgcrypt20 libgcrypt20-dev \
 ```
 ./configure --target=i386 --with-platform=pc \
 --prefix=/home/xu/grub2-bin --bindir=/home/xu/grub2-bin --sbindir=/home/xu/grub2-bin --libdir=/home/xu/grub2-bin \
---sysconfdir=/home/xu/grub2-bin/etc --localstatedir=/home/xu/grub2-bin/var --datarootdir=/home/xu/grub2-bin/share
+--sysconfdir=/home/xu/grub2-bin/etc --localstatedir=/home/xu/grub2-bin/var --datarootdir=/home/xu/grub2-bin/share \
+--enable-largefile=yes --enable-liblzma=yes
 make && make install && make clean
 ```
 
@@ -42,7 +50,8 @@ make && make install && make clean
 ```
 ./configure --target=i386 --with-platform=efi \
 --prefix=/home/xu/grub2-bin --bindir=/home/xu/grub2-bin --sbindir=/home/xu/grub2-bin --libdir=/home/xu/grub2-bin \
---sysconfdir=/home/xu/grub2-bin/etc --localstatedir=/home/xu/grub2-bin/var --datarootdir=/home/xu/grub2-bin/share
+--sysconfdir=/home/xu/grub2-bin/etc --localstatedir=/home/xu/grub2-bin/var --datarootdir=/home/xu/grub2-bin/share \
+--enable-largefile=yes --enable-liblzma=yes
 make && make install && make clean
 ```
 
@@ -50,7 +59,8 @@ make && make install && make clean
 ```
 ./configure --target=x86_64 --with-platform=efi \
 --prefix=/home/xu/grub2-bin --bindir=/home/xu/grub2-bin --sbindir=/home/xu/grub2-bin --libdir=/home/xu/grub2-bin \
---sysconfdir=/home/xu/grub2-bin/etc --localstatedir=/home/xu/grub2-bin/var --datarootdir=/home/xu/grub2-bin/share
+--sysconfdir=/home/xu/grub2-bin/etc --localstatedir=/home/xu/grub2-bin/var --datarootdir=/home/xu/grub2-bin/share \
+--enable-largefile=yes --enable-liblzma=yes
 make && make install && make clean
 ```
 
@@ -60,7 +70,8 @@ pv-grub-menu
 ```
 ./configure --target=ia64 --with-platform=efi \
 --prefix=/home/xu/grub2-bin --bindir=/home/xu/grub2-bin --sbindir=/home/xu/grub2-bin --libdir=/home/xu/grub2-bin \
---sysconfdir=/home/xu/grub2-bin/etc --localstatedir=/home/xu/grub2-bin/var --datarootdir=/home/xu/grub2-bin/share
+--sysconfdir=/home/xu/grub2-bin/etc --localstatedir=/home/xu/grub2-bin/var --datarootdir=/home/xu/grub2-bin/share \
+--enable-largefile=yes --enable-liblzma=yes
 make && make install && make clean
 ```
 
