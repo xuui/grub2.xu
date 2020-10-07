@@ -7,23 +7,15 @@
 安装编译所需要的支持库
 ```
 sudo apt install -y \
-build-essential g++-multilib g++-9-multilib gcc-multilib gcc-9-multilib gcc-9-locales gnu-standards lib32stdc++6-9-dbg libx32stdc++6-9-dbg \
-make gettext m4 automake autogen automake autoconf autoconf autoconf-archive autopoint autotools-dev libtool pkg-config flex bison binutils \
-libdevmapper-dev libpciaccess-dev libpciaccess0 libusb-dev libfreetype-dev libfreetype6-dev libsdl2-dev \
-unifont ttf-unifont unifont-bin xorriso python rsync qemu qemu-system-x86
-
-
-sudo apt install -y \
+ build-essential g++-multilib g++-9-multilib gcc-multilib gcc-9-multilib gcc-9-locales gnu-standards lib32stdc++6-9-dbg libx32stdc++6-9-dbg \
+ make gettext automake autogen automake autoconf autoconf-archive autopoint autotools-dev libtool m4 flex bison binutils pkg-config \
+ libdevmapper-dev libpciaccess-dev libpciaccess0 libusb-dev libfreetype-dev libfreetype6-dev libsdl2-dev \
+ unifont ttf-unifont unifont-bin xorriso
+ python qemu qemu-system-x86 \
 gfxboot gfxboot-dev libzfs2linux libzfslinux-dev liblzma5 liblzma-dev libefiboot1 fuse libfuse-dev fonts-dejavu ttf-dejavu \
-libpth20 libpth-dev libintl-perl libintl-xs-perl libiconv-hook-dev libiconv-hook1
-
-```
-
----
-
-```
-sudo apt install -y \
+libpth20 libpth-dev libintl-perl libintl-xs-perl libiconv-hook-dev libiconv-hook1 \
 linux-libc-dev libgusb-dev libltdl-dev libgcrypt20 libgcrypt20-dev \
+
 ```
 
 执行下面命令生成编译配置
