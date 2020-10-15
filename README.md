@@ -64,7 +64,8 @@ glibc-source
 ./configure --target=i386 --with-platform=pc \
 --prefix=/home/xu/grub2-bin --bindir=/home/xu/grub2-bin --sbindir=/home/xu/grub2-bin --libdir=/home/xu/grub2-bin \
 --sysconfdir=/home/xu/grub2-bin/etc --localstatedir=/home/xu/grub2-bin/var --datarootdir=/home/xu/grub2-bin/share
-make && make install && make clean
+make && make check
+make install && make clean
 ```
 
 编译 UEFI 32bit 启动：
@@ -72,7 +73,8 @@ make && make install && make clean
 ./configure --target=i386 --with-platform=efi \
 --prefix=/home/xu/grub2-bin --bindir=/home/xu/grub2-bin --sbindir=/home/xu/grub2-bin --libdir=/home/xu/grub2-bin \
 --sysconfdir=/home/xu/grub2-bin/etc --localstatedir=/home/xu/grub2-bin/var --datarootdir=/home/xu/grub2-bin/share
-make && make install && make clean
+make && make check
+make install && make clean
 ```
 
 编译 UEFI 64bit 启动：
@@ -80,7 +82,8 @@ make && make install && make clean
 ./configure --target=x86_64 --with-platform=efi \
 --prefix=/home/xu/grub2-bin --bindir=/home/xu/grub2-bin --sbindir=/home/xu/grub2-bin --libdir=/home/xu/grub2-bin \
 --sysconfdir=/home/xu/grub2-bin/etc --localstatedir=/home/xu/grub2-bin/var --datarootdir=/home/xu/grub2-bin/share
-make && make install && make clean
+make && make check
+make install && make clean
 ```
 
 multiboot
@@ -90,7 +93,8 @@ pv-grub-menu
 ./configure --target=ia64 --with-platform=efi \
 --prefix=/home/xu/grub2-bin --bindir=/home/xu/grub2-bin --sbindir=/home/xu/grub2-bin --libdir=/home/xu/grub2-bin \
 --sysconfdir=/home/xu/grub2-bin/etc --localstatedir=/home/xu/grub2-bin/var --datarootdir=/home/xu/grub2-bin/share
-make && make install && make clean
+make && make check
+make install && make clean
 ```
 
 可以按需加上其他附带的配置参数。比如 --enable-largefile=yes 开启大文件， --enable-liblzma=yes 支持 XZ 压缩等。
