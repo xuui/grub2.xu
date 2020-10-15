@@ -1,23 +1,54 @@
 # Make Grub.
 
-文档环境基于 Ubuntu 20.04.1   
+文档环境基于 Ubuntu 18.04.5   
 官方源码地址：git clone https://git.savannah.gnu.org/git/grub.git
 
 ## 编译
 安装编译所需要的支持库，有部分需要分开安装，不要一次全部安装。
 ```
-sudo apt install -y build-essential \
-  g++-multilib g++-9-multilib gcc-multilib gcc-9-multilib gnu-standards lib32stdc++6-9-dbg libx32stdc++6-9-dbg 
-sudo apt install -y make gettext automake autogen automake autoconf autoconf-archive autopoint autotools-dev libtool m4 flex bison binutils pkg-config
-sudo apt install -y pkgconf libdevmapper-dev libpciaccess-dev libpciaccess0 libusb-dev libfreetype-dev libfreetype6-dev libsdl2-dev
-sudo apt install -y unifont ttf-unifont unifont-bin xorriso
-sudo apt install -y python
-sudo apt install -y qemu qemu-system-x86
-sudo apt install -y gfxboot gfxboot-dev libzfs2linux libzfslinux-dev liblzma5 liblzma-dev libefiboot1 fuse libfuse-dev fonts-dejavu ttf-dejavu \
+sudo apt install \
+  lib32stdc++6
+  libx32stdc++6
+  
+sudo apt install gfxboot gfxboot-dev libzfs2linux libzfslinux-dev libefiboot1 fuse libfuse-dev fonts-dejavu ttf-dejavu \
   libpth20 libpth-dev libintl-perl libintl-xs-perl libiconv-hook-dev libiconv-hook1 \
   linux-libc-dev libgusb-dev libltdl-dev libgcrypt20 libgcrypt20-dev
 
 ```
+
+
+```
+sudo apt-get -y install build-essential \
+ asciidoc   gawk  libncurses5-dev libz-dev zlib1g-dev lib32gcc1 libc6-dev  uglifyjs core    msmtp libssl-dev texinfo libglib2.0-dev xmlto  libelf-dev     device-tree-compiler  antlr3 gperf   swig 
+
+
+sudo apt-get -y install build-essential gcc-multilib g++-multilib
+    make cmake bison gettext flex m4 autoconf automake autopoint autogen libtool binutils
+    patch python python3 python2.7 unzip rsync subversion git curl wget upx qemu qemu-utils p7zip p7zip-full bzip2
+
+flex
+binutils binutils-dev
+gcc gnu-standards make cmake bison gettext pkg-config
+autotools-dev
+libdevmapper-dev
+libfreetype6
+libfreetype6-dev
+libsdl2-dev
+libpciaccess-dev
+libusb-dev
+libfuse2
+libfuse-dev
+libzfs2linux
+libzfslinux-dev
+liblzma5
+liblzma-dev
+qemu qemu-efi qemu-system-x86
+xorriso
+unifont ttf-unifont
+glibc-source
+
+```
+
 
 执行下面命令生成编译配置
 ```
@@ -100,7 +131,7 @@ BIOS：
 ```
 ./grub-mkimage --compression=xz \
  --format=i386-pc \
- --config=../config/boot_compile.cfg \
+ --config=./boot_compile.cfg \
  --directory=./i386-pc \
  --output=../grub-i386-pc.img \
  --prefix=/boot/grub \
