@@ -9,7 +9,8 @@
 sudo apt install \
   lib32stdc++6
   libx32stdc++6
-  
+sudo apt-get install bison libopts25 libselinux1-dev autogen m4 autoconf help2man libopts25-dev flex libfont-freetype-perl automake autotools-dev libfreetype6-dev texinfo
+
 sudo apt install gfxboot gfxboot-dev libzfs2linux libzfslinux-dev libefiboot1 fuse libfuse-dev fonts-dejavu ttf-dejavu \
   libpth20 libpth-dev libintl-perl libintl-xs-perl libiconv-hook-dev libiconv-hook1 \
   linux-libc-dev libgusb-dev libltdl-dev libgcrypt20 libgcrypt20-dev
@@ -18,7 +19,7 @@ sudo apt install gfxboot gfxboot-dev libzfs2linux libzfslinux-dev libefiboot1 fu
 
 
 ```
-sudo apt-get -y install build-essential \
+sudo apt-get -y install build- \
  asciidoc   gawk  libncurses5-dev libz-dev zlib1g-dev lib32gcc1 libc6-dev  uglifyjs core    msmtp libssl-dev texinfo libglib2.0-dev xmlto  libelf-dev     device-tree-compiler  antlr3 gperf   swig 
 
 
